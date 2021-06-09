@@ -13,6 +13,10 @@
 		F4019D4926638A3E00CA8245 /* MyMemory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4019D4726638A3E00CA8245 /* MyMemory.xcdatamodeld */; };
 		F4019D4B26638A3F00CA8245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4019D4A26638A3F00CA8245 /* Assets.xcassets */; };
 		F4019D4E26638A3F00CA8245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4019D4C26638A3F00CA8245 /* LaunchScreen.storyboard */; };
+		F43A1F1C26709BC300453E44 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A1F1B26709BC300453E44 /* MemoListVC.swift */; };
+		F43A1F1E26709C4D00453E44 /* MemoFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A1F1D26709C4C00453E44 /* MemoFormVC.swift */; };
+		F43A1F2026709C5D00453E44 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A1F1F26709C5D00453E44 /* MemoReadVC.swift */; };
+		F43A1F2226709D1500453E44 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A1F2126709D1500453E44 /* MemoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		F4019D4A26638A3F00CA8245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4019D4D26638A3F00CA8245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4019D4F26638A3F00CA8245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43A1F1B26709BC300453E44 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
+		F43A1F1D26709C4C00453E44 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
+		F43A1F1F26709C5D00453E44 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
+		F43A1F2126709D1500453E44 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				F4019D3E26638A3E00CA8245 /* AppDelegate.swift */,
 				F4019D4026638A3E00CA8245 /* SceneDelegate.swift */,
 				F4019D4426638A3E00CA8245 /* Main.storyboard */,
+				F43A1F2126709D1500453E44 /* MemoCell.swift */,
+				F43A1F1B26709BC300453E44 /* MemoListVC.swift */,
+				F43A1F1D26709C4C00453E44 /* MemoFormVC.swift */,
+				F43A1F1F26709C5D00453E44 /* MemoReadVC.swift */,
 				F4019D4A26638A3F00CA8245 /* Assets.xcassets */,
 				F4019D4C26638A3F00CA8245 /* LaunchScreen.storyboard */,
 				F4019D4F26638A3F00CA8245 /* Info.plist */,
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43A1F2226709D1500453E44 /* MemoCell.swift in Sources */,
 				F4019D4926638A3E00CA8245 /* MyMemory.xcdatamodeld in Sources */,
+				F43A1F1E26709C4D00453E44 /* MemoFormVC.swift in Sources */,
+				F43A1F2026709C5D00453E44 /* MemoReadVC.swift in Sources */,
 				F4019D3F26638A3E00CA8245 /* AppDelegate.swift in Sources */,
+				F43A1F1C26709BC300453E44 /* MemoListVC.swift in Sources */,
 				F4019D4126638A3E00CA8245 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
