@@ -69,8 +69,13 @@
                                         <constraint firstItem="i6E-fs-XhB" firstAttribute="leading" secondItem="o0d-tg-doK" secondAttribute="leadingMargin" constant="10" id="zlY-Dc-aCH"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="28E-1e-rcD" id="dKe-Ei-p7l"/>
+                                    <outlet property="regdate" destination="0pv-T1-Bcy" id="0d5-eD-4rp"/>
+                                    <outlet property="subject" destination="i6E-fs-XhB" id="ROw-pD-H22"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellSithImage" rowHeight="80" id="nQK-IA-KOa" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" rowHeight="80" id="nQK-IA-KOa" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="104.33333396911621" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nQK-IA-KOa" id="Qcc-Or-VqK">
@@ -126,6 +131,12 @@
                                         <constraint firstItem="hNK-GQ-KZ3" firstAttribute="leading" secondItem="Gxa-JC-utP" secondAttribute="trailing" constant="10" id="xit-Pj-ibL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="Gxa-JC-utP" id="0yy-sE-WSo"/>
+                                    <outlet property="img" destination="H9b-oL-IFe" id="gzt-db-mPo"/>
+                                    <outlet property="regdate" destination="hNK-GQ-KZ3" id="VpE-1h-Slf"/>
+                                    <outlet property="subject" destination="cg4-bW-EIf" id="FUm-WF-QTp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -151,7 +162,7 @@
         <!--메모작성-->
         <scene sceneID="xCJ-Ax-htg">
             <objects>
-                <viewController title="메모작성" id="Aur-i6-DFa" sceneMemberID="viewController">
+                <viewController title="메모작성" id="Aur-i6-DFa" customClass="MemoFormVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jIk-SI-d64">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,10 +197,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="메모작성" id="2C1-op-JO9">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="SW7-GC-J2v"/>
-                            <barButtonItem title="저장" id="wId-tI-rDa"/>
+                            <barButtonItem systemItem="camera" id="SW7-GC-J2v">
+                                <connections>
+                                    <action selector="pick:" destination="Aur-i6-DFa" id="98T-fs-fEw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="저장" id="wId-tI-rDa">
+                                <connections>
+                                    <action selector="save:" destination="Aur-i6-DFa" id="iGW-6B-dyh"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contents" destination="x4x-3z-mxa" id="9Gh-SJ-D2t"/>
+                        <outlet property="preview" destination="cW6-FP-nTZ" id="zDN-rJ-weY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0we-LF-k3X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
