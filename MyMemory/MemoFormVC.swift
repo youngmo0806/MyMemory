@@ -7,9 +7,10 @@
 
 import UIKit
 
-class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+class MemoFormVC: UIViewController, UITextViewDelegate {
     
     var subject: String!
+    let picker = UIImagePickerController()
     
     @IBOutlet weak var contents: UITextView!
     @IBOutlet weak var preview: UIImageView!
@@ -17,7 +18,8 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.picker.delegate = self
+        self.picker.allowsEditing = true
         self.contents.delegate = self
 
     }
@@ -51,14 +53,28 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     @IBAction func pick(_ sender: Any) {
-        //이미지 피커 인스턴스를 생성한다.
-        let picker = UIImagePickerController()
         
-        picker.delegate = self
-        picker.allowsEditing = true
+        let alert = UIAlertController(title: "", message: "이미지를 가져올곳을 선택해 주세요", preferredStyle: .actionSheet)
         
-        //이미지 피커 화면을 표시한다.
-        self.present(picker, animated: false, completion: nil)
+        let camera = UIAlertAction(title: "카메라", style: .default) { _ in
+            print("카메라 선택")
+            self.picker.sourceType = .camera
+            self.present(self.picker, animated: false, completion: nil)
+        }
+        
+        let saveAlbum  = UIAlertAction(title: "저장앨범", style: .default) { _ in
+            print("저장앨범선택")
+            self.picker.sourceType = .savedPhotosAlbum
+            self.present(self.picker, animated: false, completion: nil)
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(camera)
+        alert.addAction(saveAlbum)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - UIImagePicker Delegate
@@ -81,4 +97,10 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         //네비게이션 타이틀에 표시한다.
         self.navigationItem.title = subject
     }
+    
+
+}
+
+extension MemoFormVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
 }
